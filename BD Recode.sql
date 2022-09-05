@@ -18,7 +18,7 @@ CREATE TABLE Viagens
 ( 
  IDViagens VARCHAR(n) PRIMARY KEY AUTO_INCREMENT,  
  DataViagens DATE NOT NULL,  
- horaPartida DATE NOT NULL,  
+ horaPartida TIME NOT NULL,  
  origem VARCHAR(50) NOT NULL,  
  destino VARCHAR(50) NOT NULL,  
  idPassageiros INT,  
