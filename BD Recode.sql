@@ -1,37 +1,33 @@
-CREATE TABLE Cliente 
-( 
- IDCliente INT PRIMARY KEY AUTO_INCREMENT,  
- Nome VARCHAR(50) NOT NULL,  
+create or replace table cliente(
+id int(10) auto_increment not null,
+Nome VARCHAR(50) NOT NULL,  
  Login VARCHAR(50) NOT NULL,  
- Senha VARCHAR(10) NOT NULL,  
-); 
+ Senha VARCHAR(10) NOT NULL,
+ primary key(id)
+);
 
-CREATE TABLE Veiculos 
-( 
- IDveiculo INT PRIMARY KEY AUTO_INCREMENT,  
- CompanhiaAerea VARCHAR(50),  
- modelo VARCHAR(50),  
- idViagens INT,  
-); 
-
-CREATE TABLE Viagens 
-( 
- IDViagens VARCHAR(n) PRIMARY KEY AUTO_INCREMENT,  
- DataViagens DATE NOT NULL,  
- horaPartida TIME NOT NULL,  
- origem VARCHAR(50) NOT NULL,  
- destino VARCHAR(50) NOT NULL,  
- idPassageiros INT,  
-); 
-
-CREATE TABLE Passageiros 
-( 
- IDPassageiro INT PRIMARY KEY AUTO_INCREMENT,  
+create or replace table Passageiros(
+id int(10) auto_increment not null,
  Nome VARCHAR(50),  
  CPF VARCHAR(11),  
  RG VARCHAR(10),  
  Telefone VARCHAR(10),  
-); 
+primary key(id)
+);
 
-ALTER TABLE Veiculos ADD FOREIGN KEY(idViagens) REFERENCES Viagens (idViagens)
-ALTER TABLE Viagens ADD FOREIGN KEY(idPassageiros) REFERENCES Passageiros (idPassageiros)
+create or replace table destino(
+id int(10) auto_increment not null,
+DataViagens DATE NOT NULL,  
+ horaPartida TIME NOT NULL,  
+ origem VARCHAR(50) NOT NULL,  
+ destino VARCHAR(50) NOT NULL,
+primary key(id)
+);
+
+create or replace table viagens(
+id int(10) auto_increment not null,
+CompanhiaAerea VARCHAR(50),  
+modelo VARCHAR(50),  
+primary key(id)
+);
+
