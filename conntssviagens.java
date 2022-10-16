@@ -61,34 +61,32 @@ public class conntssviagens {
 	                    }
 	                }
 	                
-	                //cliente
+	                //Contato
 	                case 2 -> {
-	                    System.out.println("1-Novo Cliente");
-	                    System.out.println("2-Ver Clientes");
+	                    System.out.println("1-Novo Contato");
+	                    System.out.println("2-Ver Contatos");
 	                    System.out.println("3-Atualizar Dados");
-	                    System.out.println("4-Deletar Cliente");
+	                    System.out.println("4-Deletar Contato");
 	                    opt = c.nextInt();
 
 	                    switch (opt) {
 
 	                    case 1 -> {
-	                        addCliente C = new addCliente(conn);
+	                        addContato C = new addContato(conn);
 	                        C.Create(c);
 	                    }
 
 	                    case 2 -> {
-	                        readCliente R = new readCliente(conn);
+	                        readContato R = new readContato(conn);
 	                        R.Read();
 	                    }
 
 	                    case 3 -> {
-	                        updateCliente U = new updateCliente(conn);
+	                        updateContato U = new updateContato(conn);
 	                        Boolean nome;
 	                        Boolean email;
 	                        Boolean telefone;
-	                        Boolean senha;
 	                        System.out.println("1-Alterar Nome");
-	                        System.out.println("2-Alterar Senha");
 	                        System.out.println("2-Alterar Email");
 	                        System.out.println("2-Alterar Telefone");
 	                        opt = c.nextInt();
@@ -97,26 +95,24 @@ public class conntssviagens {
 
 	                        case 1 -> {
 	                            nome = true;
-	                            senha = false;
-	                            telefone = false
-	                            email = false
-	                            U.Update(c, nome, senha, telefone, email);
+	                            telefone = false;
+	                            email = false;
+	                            U.Update(c, nome, telefone, email);
 	                        }
 
 	                        case 2 -> {
-	                            senha = true;
+	                            
 	                            nome = false;
 	                            telefone = false;
 	                            email = false;
-	                            U.Update(c, nome, senha, telefone, email);
+	                            U.Update(c, nome, telefone, email);
 	                        }
 
 	                        case 3 -> {
 	                            nome = false;
-	                            senha = false;
 	                            telefone = false;
 	                            email = false;
-	                            U.Update(c, nome, senha, telefone, email);
+	                            U.Update(c, nome, telefone, email);
 	                        }
 
 	                        default -> {
@@ -135,61 +131,72 @@ public class conntssviagens {
 	                    }
 	                    }
 	                }
-
-	                case 3 -> {
-	                    System.out.println("1-Novo contato");
-	                    System.out.println("2-Ver contatos");
+	                //Usuario
+	                case 2 -> {
+	                    System.out.println("1-Novo Usuario");
+	                    System.out.println("2-Ver Usuarios");
 	                    System.out.println("3-Atualizar Dados");
-	                    System.out.println("4-Deletar contato");
+	                    System.out.println("4-Deletar Usuario");
 	                    opt = c.nextInt();
 
-	                    //Destino
 	                    switch (opt) {
+
 	                    case 1 -> {
-	                        addDestino C = new addDestino(conn);
+	                        addUsuario C = new addUsuario(conn);
 	                        C.Create(c);
 	                    }
 
 	                    case 2 -> {
-	                        readDestino R = new readDestino(conn);
+	                        readUsuario R = new readUsuario(conn);
 	                        R.Read();
 	                    }
 
 	                    case 3 -> {
-	                        updateDestinoU = new updateDestino(conn);
-	                        System.out.println("1-Alterar Nome de Destino");
-	                        System.out.println("2-Alterar Horario Embarque");
-	                        System.out.println("2-Alterar Horario Partida");
-	                        opt = in.nextInt();
+	                        updateUsuario U = new updateUsuario(conn);
+	                        Boolean nome;
+	                        Boolean email;
+	                        Boolean telefone;
+	                        Boolean Senha;
+	                        System.out.println("1-Alterar Nome");
+	                        System.out.println("2-Alterar Email");
+	                        System.out.println("2-Alterar Senha");
+	                        System.out.println("2-Alterar Telefone");
 
-	                        if (opt == 1) {
-	                            nome_Destino = true;
-	                            horaEmbarque = false;
-	                            horaRetorno = false;
-	                            U.Update(in, nome_Destino, horaEmbarque, horaRetorno);
-	                        } else if (opt == 2) {
-	                        	nome_Destino = false;
-	                            horaEmbarque = true;
-	                            horaRetorno = false;
-	                            U.Update(in, nome, email, telefone);
+	                        opt = c.nextInt();
+
+	                        switch (opt) {
+
+	                        case 1 -> {
+	                            nome = true;
+	                            telefone = false;
+	                            email = false;
+	                            senha = false;
+	                            U.Update(c, nome, telefone, email, senha);
 	                        }
-	                    }
 
-	                    case 4 -> {
-	                        deleteDestino D = new deleteDestino(conn);
-	                        D.Delete(in);
-	                    }
+	                        case 2 -> {
+	                            
+	                            nome = false;
+	                            telefone = false;
+	                            email = false;
+	                            senha = false;
+	                            U.Update(c, nome, telefone, email, senha);
+	                        }
 
-	                    default -> {
-	                        System.out.println("Informe uma opcao valida");
-	                    }
-	                    }
-	                }
+	                        case 3 -> {
+	                            nome = false;
+	                            telefone = false;
+	                            email = false;
+	                            senha = false;
+	                            U.Update(c, nome, telefone, email, senha);
+	                        }
 
-	                default -> System.out.println("Escolha uma das opcoes validas");
-	                }
-	            }
-		 }
+	                        default -> {
+	                            System.out.println("Informe uma opcao valida");
+	                            {
+	                            	
+	                            }
+	                        }
 
 	         catch (SQLException ex) {
 	            ex.printStackTrace();
