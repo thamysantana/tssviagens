@@ -24,9 +24,10 @@ public class conntssviagens {
 	                
 	                System.out.println("Alterar:");
 	                System.out.println("1-Destinos");
-	                System.out.println("2-Clientes");
-	                System.out.println("3-Passagens");
+	                System.out.println("2-Clientes")
 	                System.out.println("3-Contato");
+			System.out.println("3-Usuario");
+
 	                System.out.println("0-sair");
 	                opt = c.nextInt();
 	                
