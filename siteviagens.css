@@ -1,0 +1,23 @@
+.navbar {
+padding: 10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.container{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-shadow:1px 1px 0 #444;
+}
+
+.bg{
+background-image:url(aviaooo.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+.container1{
+padding:50px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+text-shadow:2px 2px 0 rgb(10, 84, 79);
+color:aliceblue
+}
