@@ -1,0 +1,20 @@
+.navbar {
+padding: 10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.container{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+text-shadow:1px 1px 0 rgb(0, 0, 0);
+}
+
+.bg{
+background-color: cornflowerblue;
+}
+.container1{
+padding:50px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+text-shadow:1px 1px 0 rgb(0, 0, 0);
+color:aliceblue
+}
