@@ -7,57 +7,54 @@ namespace RecodeAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CursoController : ControllerBase
+    public class AgenciaController : ControllerBase
     {
 
-        private readonly CursoDbContext _context;
-        public CursoController(CursoDbContext context)
+        private readonly AgenciaDbContext _context;
+        public AgenciaController(CursoDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Cursos - LISTA TODOS OS CURSOS
+        
         [HttpGet]
-        public IEnumerable<Curso> GetCursos()
+        public IEnumerable<Agencia> GetAgencia()
         {
-            return _context.Cursos;
+            return _context.Agencia;
         }
 
 
-        // GET: api/Cursos/id - LISTA CURSO POR ID
+    
         [HttpGet("{id}")]
-        public IActionResult GetCursoPorId(int id)
+        public IActionResult GetAgenciaPorId(int id)
         {
-            Curso curso = _context.Cursos.SingleOrDefault(modelo => modelo.CursoId == id);
+            Agencia agencia = _context.Agencia.SingleOrDefault(modelo => modelo.AgenciaId == id);
             if (curso == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(curso);
+            return new ObjectResult(agencia);
         }
 
 
-        // CRIA UM NOVO CURSO
         [HttpPost]
-        public IActionResult CriarCurso(Curso item)
+        public IActionResult CriarAgencia(Agencia item)
         {
             if (item == null)
             {
                 return BadRequest();
             }
 
-            _context.Cursos.Add(item);
+            _context.Agencia.Add(item);
             _context.SaveChanges();
             return new ObjectResult(item);
 
         }
 
-
-        // ATUALIZA UM CURSO EXISTENTE
         [HttpPut("{id}")]
-        public IActionResult AtualizaCurso(int id, Curso item)
+        public IActionResult AtualizaAgencia(int id, Agencia item)
         {
-            if (id != item.CursoId)
+            if (id != item.AgenciaId)
             {
                 return BadRequest();
             }
@@ -70,22 +67,21 @@ namespace RecodeAPI.Controllers
         }
 
 
-        // APAGA UM CURSO POR ID
         [HttpDelete("{id}")]
-        public IActionResult DeletaCurso(int id)
+        public IActionResult DeletaAgencia(int id)
         {
-            var curso = _context.Cursos.SingleOrDefault(m => m.CursoId == id);
+            var Agencia = _context.Agencia.SingleOrDefault(m => m.AgenciaId == id);
 
 
-            if (curso == null)
+            if (agencia == null)
             {
                 return BadRequest();
             }
 
 
-            _context.Cursos.Remove(curso);
+            _context.Agencia.Remove(agencia);
             _context.SaveChanges();
-            return Ok(curso);
+            return Ok(agencia);
         }
 
 
